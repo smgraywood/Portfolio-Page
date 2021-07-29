@@ -266,3 +266,35 @@
            }
          
          }
+
+
+         @media (max-width:550px) {
+
+           #name {
+                margin: 5px;
+                padding: 0;
+                font-family: 'Elsie', cursive;
+                background: rgb(255, 255, 255);
+                font-size: 40px;
+                text-transform: uppercase;
+                font-weight: 1000px;
+                max-height: 100%;
+                letter-spacing: 10px;
+                position: relative;
+                display: flex;
+                justify-content: center;
+                text-align: center;
+                flex-flow: row;
+                flex-direction: row;
+                align-items: center;
+                right: 0;
+                left: 0;
+                top: 0;
+                bottom: 0;
+                /* background: url(https://www.terragalleria.com/images/us-ca/usca80085.jpeg) 10% 25%; */
+                background-size: cover;
+                -webkit-text-fill-color: transparent;
+                -webkit-background-clip: text;
+           }
+         
+         }
