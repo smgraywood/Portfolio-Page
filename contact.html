@@ -25,7 +25,7 @@
             <div id="container">
                 <div class="aboutContainer">
                     <div>
-            <form method="post" action="contact-form-process.php">
+            <form method="post" id="contactForm">
                 
                 <div>
                     <label for="Name">Your name</label>
@@ -61,6 +61,56 @@
         </div>
         </div>
         </div></h3>
+        <script>
+//  document.querySelector('form').addEventListener('submit', event => {
+//     
+//     console.log(event)
+//   })
+
+//   let form = document.querySelector("form");
+// form.addEventListener("submit", (event) => {
+//  event.preventDefault()
+//   let submitter = event.submitter;
+//   let handler = submitter.id;
+
+//   if (handler) {
+//       let data = new FormData(form).keys();
+//       console.log(data);
+//   } else {
+//     showAlertMessage("An unknown or unaccepted payment type was selected. Please try again.", "OK");
+//   }
+// });
+function collectInputs() {
+    var forms = parent.document.getElementsByTagName("form");
+   for (var i = 0;i < forms.length;i++) {
+         forms[i].addEventListener('submit', function() {
+            event.preventDefault()
+       
+            var data = [],
+                subforms = parent.document.getElementsByTagName("form");
+
+            for (x = 0 ; x < subforms.length; x++) {
+                var elements = subforms[x].elements;
+               
+                for (e = 0; e < elements.length; e++) {
+                    if (elements[e].name.length) {
+                        data.push(elements[e].name + " = " + elements[e].value);
+                     }    
+                }     
+         subforms[x].reset(); 
+        }
+           
+            console.log(data.join(' & '));
+          
+            // attachForm(data.join('&));
+        }, false);
+    
+ }
+}
+window.onload = collectInputs();
+
+            </script>
+
         <hr><br>
         <button><a href="index.html">Home</a></button>
         <button><a href="projects.html">Projects</a></button>
